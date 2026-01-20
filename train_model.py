@@ -40,7 +40,7 @@ y_test = test_data.loc[:, 'target'].values.astype('int32')
 
 # Logistic Regression
 logreg = LogisticRegression(
-    C=0.0001, solver='lbfgs', max_iter=100, multi_class='multinomial')
+    C=0.0001, solver='lbfgs', max_iter=100)
 logreg.fit(X_train, y_train)
 predictions_lr = logreg.predict(X_test)
 
@@ -146,4 +146,5 @@ with open('scores.txt', "w") as score:
     score.write("F1 Score: %2.1f%%\n" % f1_lr)
     score.write("Recall Score: %2.1f%%\n" % recall_lr)
     score.write("Precision Score: %2.1f%%\n" % prec_lr)
+
 
